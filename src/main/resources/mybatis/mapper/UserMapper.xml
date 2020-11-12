@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.travel.mapper.UserMapper" >
+  <select id="selectByPrimaryKey" resultType="com.my.travel.entity.User">
+    select *
+    from sys_user
+    where id = #{id}
+  </select>
+
+  <delete id="deleteByPrimaryKey" >
+    delete from sys_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.my.travel.entity.User" >
+    insert into sys_user (id, code, account,
+      encryption_state, password, name,
+      nickname, head_portrait, phone,
+      second_phone, email, state,
+      channel_type, merchant_number, supplier_number,
+      create_by, create_time, update_by,
+      update_time, data1, data2,
+      data3, del_flag, sex,
+      card_number, unit, unit_id,
+      post, department, department_id,
+      description, sort, second_department_id,
+      first_area_id, second_area_id, third_area_id,
+      fourth_area_id, age, birthday,
+      authorize_flag)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR},
+      #{encryptionState,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{nickname,jdbcType=VARCHAR}, #{headPortrait,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+      #{secondPhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR},
+      #{channelType,jdbcType=INTEGER}, #{merchantNumber,jdbcType=VARCHAR}, #{supplierNumber,jdbcType=VARCHAR},
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=TIMESTAMP}, #{data1,jdbcType=VARCHAR}, #{data2,jdbcType=VARCHAR},
+      #{data3,jdbcType=VARCHAR}, #{delFlag,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+      #{cardNumber,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, #{unitId,jdbcType=INTEGER},
+      #{post,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, #{departmentId,jdbcType=INTEGER},
+      #{description,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{secondDepartmentId,jdbcType=VARCHAR},
+      #{firstAreaId,jdbcType=INTEGER}, #{secondAreaId,jdbcType=INTEGER}, #{thirdAreaId,jdbcType=INTEGER},
+      #{fourthAreaId,jdbcType=INTEGER}, #{age,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR},
+      #{authorizeFlag,jdbcType=VARCHAR})
+  </insert>
+
+</mapper>
